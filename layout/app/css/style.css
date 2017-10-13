@@ -92,6 +92,13 @@ img {
   /* Internet Explorer 10+ */
   color: #999; }
 
+header {
+  width: 100%;
+  position: absolute;
+  background: blue; }
+  header .header_inner {
+    height: 100px; }
+
 /* ===============================
 	Media
    =============================== */
