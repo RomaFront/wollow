@@ -1,0 +1,106 @@
+.modal,
+.modal-box {
+    z-index: 900;
+    font-family: $intro;
+}
+
+.modal-sandbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 457px;
+    margin: 0 auto;
+    animation-name: modalbox;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+.modal-form {
+    background: $white;
+    display: block;
+    max-width: 457px;
+    margin: 100px auto 0 auto;
+    padding: 45px 33px;
+}
+
+.modal-form h2 {
+    font-size: 30px;
+    color: $silver-3;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.modal-form form {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form form input {
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  padding: 20px 30px;
+  border-radius: 50px;
+  font-family: $opensans;
+  &:focus {
+    outline: none;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.modal-form form input[type="submit"] {
+    background-color: $theme-dark-yellow;
+    color: $white;
+    font: 400 14px $opensans;
+    cursor: pointer;
+}
+
+/* Animation */
+@-webkit-keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}

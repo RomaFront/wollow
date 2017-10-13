@@ -1,0 +1,55 @@
+/*Mixins*/
+
+@mixin transition($time) {
+    -webkit-transition: $time;
+    -moz-tranition: $time;
+    -o-transition: $time;
+    transition: $time;
+}
+
+// @include transition(all .2s ease-in-out);
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//background transparency
+@mixin transparent($color, $alpha) {
+    $rgba: rgba($color, $alpha);
+    $ie-hex-str: ie-hex-str($rgba);
+    background-color: transparent;
+    background-color: $rgba;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str}, endColorstr=#{$ie-hex-str});
+    zoom: 1;
+}
+
+@mixin transform ($percent) {
+    -webkit-transform: skew($percent);
+    -moz-transform: skew($percent);
+    -o-transform: skew($percent);
+    transform: skew($percent);
+}
+
+//Skewed button
+@mixin skewed ($number) {
+    @include transform(-$number);
+    span.st //Straighten out the text
+    {
+        display: block;
+        @include transform ($number);
+    }
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+// @include font-size(16);
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
